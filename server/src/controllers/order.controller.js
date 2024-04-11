@@ -1,6 +1,6 @@
 const { Order, Gig } = require('../models');
 const { CustomException } = require('../utils');
-const stripe = require('stripe')(process.env.STRIPE_SECRET);
+const stripe = require('stripe')('sk_test_51P1snLSIw5ArTzFddoY5w24ErAIb3DpGSs3mmCFjMmTE5njpoMpeHnq6aBL5R6t5L1aB4euHClbFbkkNdkVJYZda00tP7Ah69i');
 
 const getOrders = async (request, response) => {
     try {

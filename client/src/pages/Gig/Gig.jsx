@@ -17,7 +17,7 @@ const Gig = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['gig'],
     queryFn: () =>
-      axiosFetch.get(`/gigs/single/${_id}`)
+      axiosFetch.get(`/api/gigs/single/${_id}`)
         .then(({ data }) => {
           data.images.unshift(data.cover);
           return data;

@@ -64,7 +64,7 @@ const authLogin = async (request, response) => {
             const token = jwt.sign({
                 _id: user._id,
                 isSeller: user.isSeller
-            }, 'ayushgandu', { expiresIn: '7 days' });
+            }, 'ayush', { expiresIn: '7 days' });
 
             const cookieConfig =  {
                 httpOnly: true,

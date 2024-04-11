@@ -11,6 +11,7 @@ import './Add.scss';
 
 const Add = () => {
   const user = useRecoilValue(userState);
+  console.log(user)
   const [state, dispatch] = useReducer(gigReducer, initialState);
   const [coverImage, setCoverImage] = useState(null);
   const [gigImages, setGigImages] = useState([]);
@@ -25,7 +26,7 @@ const Add = () => {
 
   const mutation = useMutation({
     mutationFn: (gig) =>
-      axiosFetch.post('/gigs', gig)
+      axiosFetch.post('/api/gigs', gig)
       .then(({data}) => {
         return data;
       })
@@ -58,6 +59,7 @@ const Add = () => {
     try {
       setUploading(true);
       const cover = await generateImageURL(coverImage);
+      console.log(cover, "THIS IS UPload cover")
       const images = await Promise.all(
         [...gigImages].map(async (img) => await generateImageURL(img))
       )

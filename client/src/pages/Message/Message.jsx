@@ -19,7 +19,7 @@ const Message = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['messages'],
     queryFn: () =>
-      axiosFetch.get(`/messages/${conversationID}`)
+      axiosFetch.get(`/api/messages/${conversationID}`)
         .then(({ data }) => {
           return data;
         })
@@ -31,7 +31,7 @@ const Message = () => {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: (message) => 
-      axiosFetch.post('/messages', message)
+      axiosFetch.post('/api/messages', message)
     ,
     onSuccess: () =>
       queryClient.invalidateQueries(['messages'])

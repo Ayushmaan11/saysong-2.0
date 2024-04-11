@@ -71,12 +71,13 @@ const CheckoutForm = () => {
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
     } else {
+      console.log(error)
+
       setMessage("An unexpected error occurred.");
     }
 
     setIsLoading(false);
   }
-
   const paymentElementOptions = {
     layout: "tabs"
   }

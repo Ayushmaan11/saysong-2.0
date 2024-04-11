@@ -21,7 +21,7 @@ const Gigs = () => {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['gigs'],
     queryFn: () =>
-      axiosFetch.get(`/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
+      axiosFetch.get(`/api/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sortBy}`)
         .then(({ data }) => {
           setCategory(data[0].category);
           return data;
@@ -48,9 +48,9 @@ const Gigs = () => {
   return (
     <div className='gigs'>
       <div className="container">
-        <span className="breadcrumbs">FIVERR {category[0]?.toUpperCase() + category.slice(1)}</span>
+        <span className="breadcrumbs">Saysong {category[0]?.toUpperCase() + category.slice(1)}</span>
         <h1>{category[0]?.toUpperCase() + category.slice(1)}</h1>
-        <p>Explore the boundaries of art and technology with Fiverr's {category} artists</p>
+        <p>Explore the boundaries of music with Saysong's {category} artists</p>
         <div className="menu">
           <div className="left">
             <span>Budget</span>

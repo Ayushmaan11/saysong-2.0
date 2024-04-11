@@ -19,7 +19,7 @@ const Orders = () => {
     queryKey: ["orders"],
     queryFn: () =>
       axiosFetch
-        .get(`/orders`)
+        .get(`/api/orders`)
         .then(({ data }) => {
           return data;
         })
@@ -37,17 +37,18 @@ const Orders = () => {
       : order.buyerID;
 
     axiosFetch
-      .get(`/conversations/single/${sellerID}/${buyerID}`)
+      .get(`/api/conversations/single/${sellerID}/${buyerID}`)
       .then(({ data }) => {
+        console.log(data.conversationID)
         navigate(`/message/${data.conversationID}`);
       })
       .catch(async ({ response }) => {
         if (response.status === 404) {
-          const { data } = await axiosFetch.post("/conversations", {
+          const { data } = await axiosFetch.post("/api/conversations", {
             to: user.isSeller ? buyerID : sellerID,
             from: user.isSeller ? sellerID : buyerID,
           });
-          navigate(`/message/${data.conversationID}`);
+          navigate(`/api/message/${data.conversationID}`);
         }
       });
   };

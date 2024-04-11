@@ -6,7 +6,7 @@ import { axiosFetch } from '../../utils';
 import { CheckoutForm } from '../../components';
 import './Pay.scss';
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe('pk_test_51P1snLSIw5ArTzFdcdFAdAMM920cs0IMf2fjTQnqVYh4kAo86hRDLe096L3wSqvw7LxqaaoxhwcSDwz4FPccqKQx00dFHMMCOK');
 
 const Pay = () => {
   const { _id } = useParams();
@@ -15,7 +15,8 @@ const Pay = () => {
   useEffect(() => {
     ( async () => {
       try {
-        const { data } = await axiosFetch.post(`/orders/create-payment-intent/${_id}`);
+        const { data } = await axiosFetch.post(`/api/orders/create-payment-intent/${_id}`);
+        console.log(data)
         setClientSecret(data.clientSecret);
       }
       catch({response}) {
@@ -33,7 +34,7 @@ const Pay = () => {
     clientSecret,
     appearance,
   };
-
+  console.log(clientSecret)
   return (
     <div className='pay'>
       <h2>Pay Securely with Stripe</h2>

@@ -9,7 +9,7 @@ const authenticate = (request, response, next) => {
             throw CustomException('Access denied!', 401);
         }
 
-        const verification = jwt.verify(accessToken, process.env.JWT_SECRET);
+        const verification = jwt.verify(accessToken, 'ayush');
         if(verification) {
             request.userID = verification._id;
             return next();

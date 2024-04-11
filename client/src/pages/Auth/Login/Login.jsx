@@ -45,7 +45,7 @@ const Login = () => {
       const { data } = await axiosFetch.post('http://localhost:8080/api/auth/login', formInput);
       localStorage.setItem('user', JSON.stringify(data.user));
       setUser(data.user);
-      toast.success("Welcome back!", {
+      toast.success("Welcome!", {
         duration: 3000,
         icon: "😃"
       });

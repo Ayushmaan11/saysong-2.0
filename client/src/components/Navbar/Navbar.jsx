@@ -23,7 +23,7 @@ const Navbar = () => {
     (async () => {
       setIsLoading(true);
       try {
-        const { data } = await axiosFetch.get('/auth/me');
+        const { data } = await axiosFetch.get('/api/auth/me');
         setUser(data.user);
       }
       catch({ response }) {
@@ -88,7 +88,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axiosFetch.post("/auth/logout");
+      await axiosFetch.post("/api/auth/logout");
       localStorage.removeItem('user');
       setUser(null);
       navigate("/");

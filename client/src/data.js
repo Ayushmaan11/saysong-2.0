@@ -4,78 +4,72 @@ export const cards = [
       title: "Country Artists",
       desc: "Singers who embrace the heart.",
       img: "./media/country.jpg",
-      slug: 'ai',
+      slug: 'Country Artists',
     },
     {
       id: 2,
       title: "Lyricists",
       desc: "Wordsmiths who craft poetic lyrics.",
       img: "./media/lyrics.jpg",
-      slug: 'design',
+      slug: 'Lyricists',
     },
     {
       id: 3,
       title: "Composer",
       desc: "Creators of musical masterpieces.",
       img: "./media/compose.jpg",
-      slug: 'wordpress'
+      slug: 'Composer'
     },
     {
       id: 4,
       title: "Classical style",
       desc: "Timeless musical tradition.",
       img: "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png",
-      slug: 'voice'
+      slug: 'Classical styl'
     },
     {
       id: 5,
       title: "Instrumentalist",
       desc: "Skillful musicians who make magic.",
       img: "./media/instrument.jpg",
-      slug: 'video'
+      slug: 'Instrumentalist'
     },
     {
       id: 6,
       title: "Vocalists",
       desc: "Artists who enchant with voice.",
       img: "./media/vocal.jpg",
-      slug: 'social'
+      slug: 'Vocalists'
     },
     {
       id: 7,
       title: "Hip-Hop",
       desc: "Rhythmic beats and poetic lyrics.",
       img: "./media/hip-hop.jpg",
-      slug: 'seo'
+      slug: 'Hip-Hop'
     },
     {
       id: 8,
       title: "Raggae-beats",
       desc: "Rhythms that make you move",
       img: "./media/reggae.jpg",
-      slug: 'illustration'
+      slug: 'Raggae-beats'
     },
     {
       id: 9,
       title: "R&B",
       desc: "Soulful and smooth music.",
       img: "./media/R&B.jpg",
-      slug: 'translation'
+      slug: 'R&B'
     },
     {
       id: 10,
       title: "Wedding Songs",
       desc: "Melodies that celebrate love.",
       img: "./media/wed.jpg",
-      slug: 'books'
+      slug: 'Wedding Songs'
     },
-    {
-      id: 11,
-      title: "Surprise your loved ones",
-      desc: "Create joy by a heartfelt surprise.",
-      img: "./media/surprise.jpg",
-      slug: 'writing'
-    },
+
   ];
   
   export const projects = [
